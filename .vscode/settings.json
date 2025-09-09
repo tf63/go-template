@@ -9,7 +9,7 @@
   },
   "go.lintTool": "golangci-lint",
   "go.lintFlags": ["--path-mode=abs", "--fast-only"],
-  "go.lintOnSave": "file",
+  "go.lintOnSave": "package",
   "go.formatTool": "custom",
   "go.formatFlags": ["fmt", "--stdin"],
   "go.toolsManagement.checkForUpdates": "local",
