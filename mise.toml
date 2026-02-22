@@ -1,5 +1,5 @@
 [tools]
-go = "1.25"
+go = "1.26"
 "npm:commitlint" = "19.8.1"
 "npm:lefthook" = "1.11.14"
 "npm:prettier" = "3.5.3"

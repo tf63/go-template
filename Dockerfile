@@ -1,4 +1,4 @@
-FROM golang:1.25.0-alpine3.22 AS base
+FROM golang:1.26.0-alpine3.23 AS base
 
 # ワークディレクトリの指定
 WORKDIR /app
@@ -65,7 +65,7 @@ EXPOSE 8080
 # ----------------------------------------------------------------
 # 開発環境
 # ----------------------------------------------------------------
-FROM golang:1.25.0-alpine3.22 AS dev
+FROM golang:1.26.0-alpine3.23 AS dev
 
 WORKDIR /app
 
