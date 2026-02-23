@@ -14,6 +14,12 @@ linters:
     - unparam # 未使用の関数引数を検出
     - ineffassign # 効果のない代入を検出
     - revive # `golint` の後継。命名規則やコード構造など
+    - modernize # 古いGoコードを新しいスタイルに変換
+  settings:
+    revive:
+      rules:
+        - name: package-comments
+          disabled: true
 
 # https://golangci-lint.run/usage/formatters/
 formatters:
