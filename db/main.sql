@@ -1,0 +1,3 @@
+-- atlas:import tables/atlas_schema_revisions.sql
+-- atlas:import tables/cats.sql
+-- atlas:import tables/dogs.sql

@@ -23,4 +23,16 @@ run = [
   "docker compose exec db mysql -uroot -prootpassword example"
 ]
 
+[tasks.atlas-inspect]
+description = "Inspect the database schema and generate the atlas file"
+run = [
+  "atlas schema inspect --env local"
+]
+
+[tasks.atlas-apply]
+description = "Run database migrations"
+run = [
+  "atlas schema apply --env local"
+]
+
 [env]
