@@ -60,17 +60,10 @@ This project uses the following tools:
 
 ## Setup
 
-To set up the Go template project, follow these steps:
+To set up the Go template project, run the following command to install all dependencies and tools:
 
 ```shell
 mise install
-mise install-tools
-```
-
-and then run:
-
-```shell
-go mod tidy
 ```
 
 ## Usage
@@ -80,7 +73,7 @@ go mod tidy
 Generates data models from the tables registered in `scripts/gorm_gen/main.go`.
 
 ```shell
-go run scripts/gorm_gen/main.go
+mise run gorm-gen
 ```
 
 ### Atlas
