@@ -1,9 +1,12 @@
 [tools]
 go = "1.26.0"
 atlas = "1.1.0"
+pnpm = "10.24.0"
 "npm:commitlint" = "19.8.1"
 "npm:lefthook" = "1.11.14"
 "npm:prettier" = "3.5.3"
+"npm:openapi-generate-html" = "0.5.3"
+"npm:serve" = "14.2.6"
 
 [hooks]
 postinstall = "lefthook install"
@@ -28,6 +31,28 @@ run = ["atlas schema inspect --env local"]
 [tasks.atlas-apply]
 description = "Run database migrations"
 run = ["atlas schema apply --env local"]
+
+[tasks.swagger]
+description = "Build and serve Swagger documentation"
+run = ["mise run swagger-build", "mise run swagger-serve"]
+
+[tasks.swagger-build]
+description = "Build Swagger documentation"
+run = [
+  "openapi-generate-html -i openapi/schema/openapi.yaml --theme light --ui stoplight -o openapi/html/index.html",
+]
+
+[tasks.swagger-serve]
+description = "Serve Swagger documentation"
+run = ["serve -l 6608 openapi/html"]
+
+[tasks.typespec-install]
+description = "Install TypeSpec dependencies"
+run = ["pnpm install -C ./typespec"]
+
+[tasks.typespec-compile]
+description = "Compile TypeSpec files"
+run = ["pnpm -C ./typespec typespec"]
 
 [env]
 DB_HOST = "localhost"
