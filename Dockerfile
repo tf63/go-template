@@ -69,6 +69,6 @@ FROM deps AS dev
 
 WORKDIR /app
 
-RUN go install github.com/air-verse/air@v1.62.0
+RUN go install github.com/air-verse/air@v1.64.5
 
 ENTRYPOINT ["air"]
