@@ -32,5 +32,16 @@
   "go.inlayHints.parameterNames": true,
   "go.inlayHints.compositeLiteralFields": true,
   "go.inlayHints.compositeLiteralTypes": true,
-  "go.inlayHints.rangeVariableTypes": true
+  "go.inlayHints.rangeVariableTypes": true,
+  "gopls": {
+    "ui.newGoFileHeader": true
+  },
+  "chat.includeApplyingInstructions": true,
+  "chat.includeReferencedInstructions": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true
+  }
 }
