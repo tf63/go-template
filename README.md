@@ -4,12 +4,13 @@ A minimal Go project template with database schema management and code generatio
 
 ## Technology Stack
 
-| Tech      | Version |
-| --------- | ------- |
-| **Go**    | 1.26.0  |
-| **GORM**  | 1.25.11 |
-| **Atlas** | 1.1.0   |
-| **MySQL** | 8.4.5   |
+| Tech         | Version |
+| ------------ | ------- |
+| **Go**       | 1.26.0  |
+| **GORM**     | 1.25.11 |
+| **Atlas**    | 1.1.0   |
+| **TypeSpec** | 1.10.0  |
+| **MySQL**    | 8.4.5   |
 
 ## Project Structure
 
@@ -30,6 +31,10 @@ A minimal Go project template with database schema management and code generatio
 ├── pkg/                  # Reusable shared packages
 │   ├── config/           # Configuration loading
 │   └── logger/           # Logger setup
+├── openapi/              # OpenAPI specifications generated from TypeSpec
+│   ├── schema/           # Database schema exported by Atlas
+│   └── html/             # HTML documentation generated from OpenAPI specifications
+├── typespec/             # TypeSpec files
 └── scripts/              # Development scripts
 ```
 
@@ -43,6 +48,8 @@ This project uses the following tools:
 - [lefthook](https://github.com/evilmartians/lefthook): A Git hooks manager
 - [commitlint](https://commitlint.js.org/): A tool to lint commit messages
 - [prettier](https://prettier.io/): A code formatter for other languages
+- [typespec](https://typespec.dev/): A tool for designing APIs and generating OpenAPI specifications
+- [openapi-generate-html](https://github.com/qazsato/openapi-generate-html): A tool to generate HTML documentation from OpenAPI specifications
 
 **Go tools:**
 
@@ -89,3 +96,23 @@ Runs declarative migrations based on the DDL files located in `db/`.
 ```shell
 mise run atlas-apply
 ```
+
+### TypeSpec
+
+First, run `mise run typespec-install` to install TypeSpec dependencies.
+
+Then generates OpenAPI specifications from the TypeSpec files located in `typespec/src`.
+
+```shell
+mise run typespec-compile
+```
+
+### OpenAPI Generate HTML
+
+Generates HTML documentation from the OpenAPI specifications located in `openapi/schema/`.
+
+```shell
+mise run swagger-build
+```
+
+Run `mise run swagger-serve` to host the documentation at http://localhost:6608.
