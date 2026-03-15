@@ -1,5 +1,14 @@
 # Go Template
 
+## Technology Stack
+
+| Tech      | Version |
+| --------- | ------- |
+| **Go**    | 1.26.0  |
+| **GORM**  | 1.25.11 |
+| **Atlas** | 1.1.0   |
+| **MySQL** | 8.4.5   |
+
 ## Tools
 
 This project uses the following tools:
