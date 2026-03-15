@@ -56,6 +56,7 @@ This project uses the following tools:
 **Go tools:**
 
 - [golangci-lint](https://golangci-lint.run/): A Go linters aggregator
+- [oapi-codegen](https://github.com/deepmap/oapi-codegen): A tool to generate Go code from OpenAPI specifications
 - [air](https://github.com/air-verse/air): A live reloading tool for Go applications
 - [atlas](https://atlasgo.io/): A database schema management tool
 - [GORM gen](https://gorm.io/gen/): A code generation tool for GORM
