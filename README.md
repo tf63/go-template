@@ -4,12 +4,19 @@
 
 This project uses the following tools:
 
+**General tools:**
+
 - [mise](https://mise.jdx.dev/): A tool for managing development environments and dependencies
 - [lefthook](https://github.com/evilmartians/lefthook): A Git hooks manager
-- [golangci-lint](https://golangci-lint.run/): A Go linters aggregator
-- [air](https://github.com/air-verse/air): A live reloading tool for Go applications
 - [commitlint](https://commitlint.js.org/): A tool to lint commit messages
 - [prettier](https://prettier.io/): A code formatter for other languages
+
+**Go tools:**
+
+- [golangci-lint](https://golangci-lint.run/): A Go linters aggregator
+- [air](https://github.com/air-verse/air): A live reloading tool for Go applications
+- [atlas](https://atlasgo.io/): A database schema management tool
+- [GORM gen](https://gorm.io/gen/): A code generation tool for GORM
 
 ## Setup
 
@@ -26,4 +33,26 @@ and then run:
 go mod tidy
 ```
 
-## (WIP) Docker
+## Usage
+
+### GORM gen
+
+Generates data models from the tables registered in `scripts/gorm_gen/main.go`.
+
+```shell
+go run scripts/gorm_gen/main.go
+```
+
+### Atlas
+
+Exports the database schema from the running MySQL container to `schema/`.
+
+```shell
+mise run atlas-inspect
+```
+
+Runs declarative migrations based on the DDL files located in `db/`.
+
+```shell
+mise run atlas-apply
+```
