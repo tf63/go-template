@@ -37,7 +37,7 @@
   "go.inlayHints.compositeLiteralTypes": true,
   "go.inlayHints.rangeVariableTypes": true,
   "gopls": {
-    "ui.newGoFileHeader": true
+    "ui.newGoFileHeader": false
   },
   "chat.includeApplyingInstructions": true,
   "chat.includeReferencedInstructions": true,
