@@ -67,6 +67,7 @@ To set up the Go template project, run the following command to install all depe
 
 ```shell
 mise install
+mise install-tools
 ```
 
 ## Usage
@@ -76,7 +77,7 @@ mise install
 Generates Go code from the OpenAPI specifications located in `openapi/schema/`. The generated code is placed under `internal/handler/gen/`.
 
 ```shell
-mise run oapi-gen
+mise oapi-gen
 ```
 
 ### GORM gen
@@ -84,7 +85,7 @@ mise run oapi-gen
 Generates data models from the tables registered in `scripts/gorm_gen/main.go`.
 
 ```shell
-mise run gorm-gen
+mise gorm-gen
 ```
 
 ### Atlas
@@ -92,23 +93,23 @@ mise run gorm-gen
 Exports the database schema from the running MySQL container to `schema/`.
 
 ```shell
-mise run atlas-inspect
+mise atlas-inspect
 ```
 
 Runs declarative migrations based on the DDL files located in `db/`.
 
 ```shell
-mise run atlas-apply
+mise atlas-apply
 ```
 
 ### TypeSpec
 
-First, run `mise run typespec-install` to install TypeSpec dependencies.
+First, run `mise typespec-install` to install TypeSpec dependencies.
 
 Then generates OpenAPI specifications from the TypeSpec files located in `typespec/src`.
 
 ```shell
-mise run typespec-compile
+mise typespec-compile
 ```
 
 ### OpenAPI Generate HTML
@@ -116,7 +117,7 @@ mise run typespec-compile
 Generates HTML documentation from the OpenAPI specifications located in `openapi/schema/`.
 
 ```shell
-mise run swagger-build
+mise swagger-build
 ```
 
-Run `mise run swagger-serve` to host the documentation at http://localhost:6608.
+Run `mise swagger-serve` to host the documentation at http://localhost:6608.

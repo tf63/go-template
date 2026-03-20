@@ -16,7 +16,7 @@
   "[go.work]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "go.lintTool": "golangci-lint",
+  "go.lintTool": "golangci-lint-v2",
   "go.lintFlags": ["--path-mode=abs", "--fast-only"],
   "go.lintOnSave": "package",
   "go.formatTool": "custom",
@@ -26,7 +26,9 @@
   "go.goroot": "~/.local/share/mise/installs/go/1.26.0",
   "go.alternateTools": {
     "customFormatter": "~/.local/share/mise/installs/go/1.26.0/bin/golangci-lint",
-    "gopls": "~/.local/share/mise/installs/go/1.26.0/bin/gopls"
+    "gopls": "~/.local/share/mise/installs/go/1.26.0/bin/gopls",
+    "dlv": "~/.local/share/mise/installs/go/1.26.0/bin/dlv",
+    "go": "~/.local/share/mise/installs/go/1.26.0/bin/go"
   },
   "go.inlayHints.ignoredError": true,
   "go.inlayHints.assignVariableTypes": true,
