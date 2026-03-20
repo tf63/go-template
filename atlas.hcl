@@ -1,6 +1,31 @@
+variable "db_host" {
+  type    = string
+  default = getenv("DB_HOST")
+}
+
+variable "db_port" {
+  type    = string
+  default = getenv("DB_PORT")
+}
+
+variable "db_user" {
+  type    = string
+  default = getenv("DB_USER")
+}
+
+variable "db_password" {
+  type    = string
+  default = getenv("DB_PASSWORD")
+}
+
+variable "db_name" {
+  type    = string
+  default = getenv("DB_NAME")
+}
+
 env "local" {
   src = "file://db"
-  url = "mysql://root:rootpassword@localhost:3306/example"
+  url = "mysql://${var.db_user}:${var.db_password}@${var.db_host}:${var.db_port}/${var.db_name}"
   dev = "docker://mysql/8/dev"
 
   format {
